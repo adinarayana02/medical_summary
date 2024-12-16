@@ -2,10 +2,9 @@ import streamlit as st
 import openai
 from pydub import AudioSegment
 import io
+import os
 
-# Set your OpenAI API key
-openai_api_key = "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"
-
+openai.api_key = os.getenv("OPENAI_API_KEY")
 # Function to summarize the transcript into medical sections
 def medical_summary(transcript):
     prompt = f"""
